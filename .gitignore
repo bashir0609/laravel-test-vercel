@@ -1,22 +1,40 @@
 ```
 # Build artifacts
 public/build/
+
 # Dependencies
 node_modules/
 vendor/
-# Logs and temp files
+
+# Logs
 *.log
-*.tmp
+
 # Environment
 .env
 .env.local
 .env.*
-# Cache
-.cache/
-.php_cs.cache
+
 # Editor
 .vscode/
 .idea/
-*.swp
-*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Testing
+.coverage
+coverage/
+htmlcov/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
 ```
