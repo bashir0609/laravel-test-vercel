@@ -1,6 +1,8 @@
 {
   "version": 2,
   "framework": null,
+  "buildCommand": "touch /tmp/database.sqlite && composer install --no-dev --optimize-autoloader && php artisan migrate --force --seed && npm run build",
+  "installCommand": "apt-get update && apt-get install -y sqlite3 && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer",
   "functions": {
     "api/index.php": {
       "runtime": "vercel-php@0.7.1"
@@ -19,8 +21,8 @@
   "outputDirectory": "public",
   "env": {
     "APP_ENV": "production",
-    "APP_DEBUG": "true",
-    "APP_URL": "https://islahwebservice.com",
+    "APP_DEBUG": "false",
+    "APP_URL": "https://laravel-test-vercel-git-larave-15cd75-bashirs-projects-a643c72f.vercel.app",
     "APP_CONFIG_CACHE": "/tmp/config.php",
     "APP_EVENTS_CACHE": "/tmp/events.php",
     "APP_PACKAGES_CACHE": "/tmp/packages.php",

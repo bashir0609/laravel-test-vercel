@@ -19,4 +19,7 @@ export default defineConfig({
             },
         },
     },
+    server: {
+        origin: 'https://laravel-test-vercel-git-larave-15cd75-bashirs-projects-a643c72f.vercel.app',
+    },
 });
