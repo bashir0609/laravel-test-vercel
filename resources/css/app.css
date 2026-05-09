@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+/* Custom styles for Islah Web Service */
+.conversion-hero {
+  background-image: linear-gradient(to bottom, transparent, white, white);
+}
+
+.dark .conversion-hero {
+  background-image: linear-gradient(to bottom, transparent, #18181b, #18181b);
+}
+
+.btn-primary {
+  background-color: #2563eb;
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #1d4ed8;
+}
+
+.btn-secondary {
+  border: 2px solid #d1d5db;
+  color: #374151;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+  border-color: #2563eb;
+  color: #2563eb;
+}
+
+.answer-card,
+.service-feature-card,
+.process-card {
+  transition: box-shadow 0.3s;
+}
+
+.answer-card:hover,
+.service-feature-card:hover,
+.process-card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+  color: #2563eb;
+  transition: color 0.3s;
+}
+
+.text-link:hover {
+  color: #1e40af;
+}
+
+/* Form styles */
+input[type="text"],
+input[type="email"],
+input[type="url"],
+textarea,
+select {
+  width: 100%;
+  border-radius: 0.375rem;
+  border-color: #d1d5db;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  padding: 0.75rem;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+textarea:focus,
+select:focus {
+  border-color: #3b82f6;
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Hero section specific */
+.hero-offer-card {
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  border: 1px solid #f3f4f6;
+}
+
+/* Trust strip icons */
+.trust-strip span {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.trust-strip svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #22c55e;
+  margin-right: 0.5rem;
+}
