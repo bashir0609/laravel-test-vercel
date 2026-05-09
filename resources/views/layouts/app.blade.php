@@ -39,7 +39,20 @@
                     <li><a href="#proof" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition">Proof</a></li>
                     <li><a href="#pricing" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition">Pricing</a></li>
                     <li><a href="#faq" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition">FAQ</a></li>
-                    <li><a href="#free-sample" class="nav-link-cta bg-blue-600 text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-blue-700 transition">Free Sample</a></li>
+                    @auth
+                        @if(auth()->user()->role === 'admin')
+                            <li><a href="{{ route('admin.dashboard') }}" class="text-blue-600 font-semibold">Admin Panel</a></li>
+                        @endif
+                        <li>
+                            <form action="{{ route('logout') }}" method="POST" class="inline">
+                                @csrf
+                                <button type="submit" class="text-gray-700 hover:text-red-600 font-medium transition">Logout</button>
+                            </form>
+                        </li>
+                    @else
+                        <li><a href="{{ route('login') }}" class="text-gray-700 hover:text-blue-600 font-medium transition">Login</a></li>
+                        <li><a href="{{ route('register') }}" class="nav-link-cta bg-blue-600 text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-blue-700 transition">Free Sample</a></li>
+                    @endauth
                 </ul>
 
                 <!-- Mobile Menu Button -->
