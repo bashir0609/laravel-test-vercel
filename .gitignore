@@ -1,33 +1,6 @@
-```gitignore
-# Compiled and build artifacts
-*.pyc
-__pycache__/
-
-# Dependencies
-vendor/
-node_modules/
-
-# Logs and temp files
-*.log
-*.tmp
-*.swp
-
-# Environment
-.env
-.env.local
-*.env.*
-
-# Editors
-.vscode/
-.idea/
-
-# Laravel specific
-bootstrap/cache/
-storage/logs/
-storage/framework/
-public/storage/
-
-# OS generated files
-.DS_Store
-Thumbs.db
+```
+# Build artifacts
+public/build/
+# Vite specific
+.vite/
 ```
