@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for Islah Web Service */
+.conversion-hero {
+    @apply bg-gradient-to-b from-transparent via-white to-white dark:from-transparent dark:via-zinc-900 dark:to-zinc-900;
+}
+
+.btn-primary {
+    @apply bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-700 transition duration-300;
+}
+
+.btn-secondary {
+    @apply border-2 border-gray-300 text-gray-700 font-semibold py-3 px-6 rounded-lg hover:border-blue-600 hover:text-blue-600 transition duration-300;
+}
+
+.answer-card,
+.service-feature-card,
+.process-card {
+    @apply transition duration-300 hover:shadow-lg;
+}
+
+.text-link {
+    @apply inline-flex items-center font-semibold text-blue-600 hover:text-blue-800 transition duration-300;
+}
+
+/* Form styles */
+input[type="text"],
+input[type="email"],
+input[type="url"],
+textarea,
+select {
+    @apply w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 border p-3;
+}
+
+/* Hero section specific */
+.hero-offer-card {
+    @apply bg-white rounded-2xl shadow-xl p-8 border border-gray-100;
+}
+
+/* Trust strip icons */
+.trust-strip span {
+    @apply flex items-center text-sm text-gray-500;
+}
+
+.trust-strip svg {
+    @apply w-5 h-5 text-green-500 mr-2;
+}
