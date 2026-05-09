@@ -1,15 +1,12 @@
 ```
+# Build artifacts
+public/build/
 # Dependencies
 node_modules/
 # Environment
 .env
 .env.local
 .env.*
-# Logs and temp files
-*.log
-*.tmp
-*.swp
-# Editors
-.vscode/
-.idea/
+# Cache
+.vite/
 ```
