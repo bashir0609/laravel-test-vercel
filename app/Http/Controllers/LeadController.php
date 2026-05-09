@@ -23,7 +23,7 @@ class LeadController extends Controller
         // Log the lead (in production, you'd save to database or send email)
         Log::info('New sample lead request', $validated);
 
-        // For now, redirect back with success message
-        return redirect()->back()->with('success', 'Thank you! We will review your request and send 20 free sample leads to your email.');
+        // Redirect to welcome page with success message
+        return redirect('/#free-sample')->with('success', 'Thank you! We will review your request and send 20 free sample leads to your email.');
     }
 }
