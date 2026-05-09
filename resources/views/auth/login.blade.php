@@ -11,10 +11,10 @@
             @csrf
             
             <div class="mb-4">
-                <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email Address</label>
                 <input type="email" name="email" id="email" value="{{ old('email') }}" 
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline @error('email') border-red-500 @enderror" 
-                    required autofocus>
+                    required autofocus autocomplete="email">
                 @error('email')
                     <p class="text-red-500 text-xs italic mt-1">{{ $message }}</p>
                 @enderror
@@ -24,7 +24,7 @@
                 <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Password</label>
                 <input type="password" name="password" id="password" 
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline @error('password') border-red-500 @enderror" 
-                    required>
+                    required autocomplete="current-password">
                 @error('password')
                     <p class="text-red-500 text-xs italic mt-1">{{ $message }}</p>
                 @enderror

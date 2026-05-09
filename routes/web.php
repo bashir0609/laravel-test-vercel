@@ -6,7 +6,7 @@ use App\Http\Controllers\Auth\RegisterController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 // Guest routes (only for non-authenticated users)
 Route::middleware('guest')->group(function () {

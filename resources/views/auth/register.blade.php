@@ -11,20 +11,20 @@
             @csrf
             
             <div class="mb-4">
-                <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
+                <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Full Name</label>
                 <input type="text" name="name" id="name" value="{{ old('name') }}" 
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline @error('name') border-red-500 @enderror" 
-                    required autofocus>
+                    required autofocus autocomplete="name">
                 @error('name')
                     <p class="text-red-500 text-xs italic mt-1">{{ $message }}</p>
                 @enderror
             </div>
             
             <div class="mb-4">
-                <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email Address</label>
                 <input type="email" name="email" id="email" value="{{ old('email') }}" 
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline @error('email') border-red-500 @enderror" 
-                    required>
+                    required autocomplete="email">
                 @error('email')
                     <p class="text-red-500 text-xs italic mt-1">{{ $message }}</p>
                 @enderror
@@ -34,7 +34,7 @@
                 <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Password</label>
                 <input type="password" name="password" id="password" 
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline @error('password') border-red-500 @enderror" 
-                    required>
+                    required autocomplete="new-password" minlength="8">
                 @error('password')
                     <p class="text-red-500 text-xs italic mt-1">{{ $message }}</p>
                 @enderror
@@ -44,7 +44,7 @@
                 <label for="password_confirmation" class="block text-gray-700 text-sm font-bold mb-2">Confirm Password</label>
                 <input type="password" name="password_confirmation" id="password_confirmation" 
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
-                    required>
+                    required autocomplete="new-password" minlength="8">
             </div>
             
             <div class="flex items-center justify-between">
