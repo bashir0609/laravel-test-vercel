@@ -1,11 +1,14 @@
 {
   "version": 2,
   "framework": null,
-  "functions": {
-    "api/index.php": {
-      "runtime": "vercel-php@0.7.1"
+  "builds": [
+    {
+      "src": "api/index.php",
+      "use": "vercel-php@0.7.1"
     }
-  },
+  ],
+  "buildCommand": "composer install --no-dev --optimize-autoloader && php artisan config:cache && php artisan route:cache && php artisan view:cache",
+  "installCommand": "curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && composer install --no-dev --optimize-autoloader",
   "routes": [
     {
       "src": "/build/(.*)",
