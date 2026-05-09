@@ -1,25 +1,51 @@
-```gitignore
+```
+# Compiled and build artifacts
+*.pyc
+__pycache__/
+*.o
+*.obj
+dist/
+build/
+*.class
+*.exe
+*.dll
+*.so
+*.a
+*.out
+
 # Dependencies
+node_modules/
 vendor/
 composer.lock
-
-# Environment
 .env
 .env.local
 .env.*
 
-# Logs
+# Logs and temp files
 *.log
+*.tmp
+*.swp
+*.swo
 
-# IDE
+# Editors
 .vscode/
 .idea/
 
-# OS
+# System files
 .DS_Store
 Thumbs.db
 
-# Build
-build/
-dist/
+# Coverage and testing
+.coverage
+coverage/
+htmlcov/
+.mypy_cache/
+.pytest_cache/
+
+# Laravel specific
+storage/
+bootstrap/cache/
+public/storage
+.npm
+.yarn
 ```

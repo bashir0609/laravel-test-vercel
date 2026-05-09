@@ -1,10 +1,11 @@
 ---
 title: Islah Web Service
-description: A Laravel app that connects to a PostgreSQL database
+description: A Laravel app that connects to a PostgreSQL database with authentication
 tags:
   - php
   - laravel
   - postgresql
+  - authentication
 ---
 
 # Islah Web Service
@@ -18,3 +19,6 @@ This is a [Laravel](https://laravel.com/) application for Islah Web Service.
 - PHP
 - Islah Web Service
 - Postgres
+- User Authentication (Login/Register)
+- Protected Dashboard
+- Session Management
