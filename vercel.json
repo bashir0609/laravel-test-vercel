@@ -1,6 +1,8 @@
 {
   "version": 2,
   "framework": null,
+  "buildCommand": "composer install --no-dev --optimize-autoloader && php artisan migrate --force && npm run build",
+  "installCommand": "apt-get update && apt-get install -y sqlite3 && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer",
   "functions": {
     "api/index.php": {
       "runtime": "vercel-php@0.7.1"
