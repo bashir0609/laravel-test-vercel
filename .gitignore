@@ -1,4 +1,11 @@
 ```
-# Dependencies
-node_modules/
+# Build artifacts
+public/build/
+# Cache and temp files
+*.tmp
+*.swp
+# Environment
+.env
+.env.local
+.env.*
 ```
