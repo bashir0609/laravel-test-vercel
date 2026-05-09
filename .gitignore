@@ -1,62 +1,70 @@
 ```
-# Build artifacts
-public/build/
-
-# Vite cache
-.vite/
-
-# Environment files
+# Environment variables
 .env
-.env.local
-*.env.*
+
+# Dependencies
+node_modules/
+
+# Build artifacts
+dist/
+build/
+*.min.js
+*.min.css
+*.map
 
 # Logs
 *.log
 
-# Temporary files
-*.tmp
-*.swp
-*.swo
-
-# Dependencies
-node_modules/
-vendor/
-
-# IDE files
-.vscode/
-.idea/
-*.iml
-*.ipr
-*.iws
-
-# OS files
+# OS generated files
 .DS_Store
 Thumbs.db
 
-# Coverage
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Coverage reports
 coverage/
 htmlcov/
 .coverage
 
-# Python
+# Python specific
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 .Python
 *.so
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Testing
+.pytest_cache/
+.mypy_cache/
+
+# Distribution / packaging
+.Python
 *.egg-info/
 .eggs/
+pip-log.txt
+pip-delete-this-directory.txt
 
-# Node
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# Local development settings
+.env.local
+.env.*
 
-# PHP
-composer.lock
-vendor/
-
-# Vercel
-.vercel/
+# Compressed files
+*.zip
+*.tar.gz
+*.tar.bz2
+*.tar.xz
+*.gz
+*.rar
+*.7z
 ```

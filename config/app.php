@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'https://laravel-test-vercel-git-larave-15cd75-bashirs-projects-a643c72f.vercel.app'),
 
     /*
     |--------------------------------------------------------------------------
