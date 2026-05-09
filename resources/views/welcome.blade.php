@@ -6,9 +6,9 @@
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-2 gap-12 items-start">
             <div>
-                <div class="eyebrow text-blue-600 font-semibold text-sm mb-4">B2B Lead Generation • Local Leads • E-commerce SEO</div>
+                <div class="text-blue-600 font-semibold text-sm mb-4 uppercase tracking-wide">B2B Lead Generation • Local Leads • E-commerce SEO</div>
                 <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 dark:text-white leading-tight mb-6">Get clean, verified B2B leads your sales team can actually use.</h1>
-                <p class="hero-lede text-lg text-gray-600 dark:text-gray-400 mb-8">We build targeted prospect lists for cold email, LinkedIn outreach, calling, appointment setting, and sales campaigns — without random companies, duplicates, or bounced emails.</p>
+                <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">We build targeted prospect lists for cold email, LinkedIn outreach, calling, appointment setting, and sales campaigns — without random companies, duplicates, or bounced emails.</p>
                 <div class="flex flex-wrap gap-4 mb-8">
                     <a class="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition inline-block" href="#free-sample">Get 20 Free Sample Leads</a>
                     <a class="border-2 border-gray-300 text-gray-700 dark:text-gray-300 px-8 py-4 rounded-lg font-semibold hover:border-blue-600 hover:text-blue-600 transition inline-block" href="#process">See the Process</a>
@@ -96,7 +96,7 @@
 <section class="py-16 bg-gray-50 dark:bg-zinc-900" id="answers">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="max-w-3xl mx-auto text-center mb-12">
-            <div class="eyebrow text-blue-600 font-semibold text-sm mb-4">Quick answers</div>
+            <div class="text-blue-600 font-semibold text-sm mb-4 uppercase tracking-wide text-blue-600 font-semibold text-sm mb-4">Quick answers</div>
             <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">Direct answers about Islah Web Service.</h2>
             <p class="text-gray-600 dark:text-gray-400">These short answers help buyers, search engines, and AI answer engines understand exactly what the business does.</p>
         </div>
@@ -125,7 +125,7 @@
 <section class="py-16" id="services">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="max-w-3xl mx-auto text-center mb-12">
-            <div class="eyebrow text-blue-600 font-semibold text-sm mb-4">Services</div>
+            <div class="text-blue-600 font-semibold text-sm mb-4 uppercase tracking-wide text-blue-600 font-semibold text-sm mb-4">Services</div>
             <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">Two services built for growth teams.</h2>
             <p class="text-gray-600 dark:text-gray-400">Lead generation gives your sales team better prospects. SEO content gives your website and store more search visibility.</p>
         </div>
@@ -160,7 +160,7 @@
 <section class="py-16 bg-gray-50 dark:bg-zinc-900" id="process">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="max-w-3xl mx-auto text-center mb-12">
-            <div class="eyebrow text-blue-600 font-semibold text-sm mb-4">Lead generation process</div>
+            <div class="text-blue-600 font-semibold text-sm mb-4 uppercase tracking-wide text-blue-600 font-semibold text-sm mb-4">Lead generation process</div>
             <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">From raw local data to verified outreach-ready leads.</h2>
         </div>
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -192,7 +192,7 @@
 <section class="py-16" id="pricing">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="max-w-3xl mx-auto text-center mb-12">
-            <div class="eyebrow text-blue-600 font-semibold text-sm mb-4">Pricing</div>
+            <div class="text-blue-600 font-semibold text-sm mb-4 uppercase tracking-wide text-blue-600 font-semibold text-sm mb-4">Pricing</div>
             <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">Start with a sample, then quote by volume and complexity.</h2>
             <p class="text-gray-600 dark:text-gray-400">Lead pricing depends on niche difficulty, contact depth, enrichment, verification, and delivery format.</p>
         </div>
@@ -226,7 +226,7 @@
 <section class="py-16 bg-gray-50 dark:bg-zinc-900" id="faq">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="max-w-3xl mx-auto text-center mb-12">
-            <div class="eyebrow text-blue-600 font-semibold text-sm mb-4">FAQ</div>
+            <div class="text-blue-600 font-semibold text-sm mb-4 uppercase tracking-wide text-blue-600 font-semibold text-sm mb-4">FAQ</div>
             <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">Questions buyers ask before ordering.</h2>
         </div>
         <div class="grid md:grid-cols-2 gap-6">

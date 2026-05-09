@@ -11,11 +11,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .smooth-scroll { scroll-behavior: smooth; }
     </style>
     @stack('styles')
 </head>
-<body class="bg-white text-gray-900 smooth-scroll">
+<body class="bg-white text-gray-900">
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-sm z-50">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
