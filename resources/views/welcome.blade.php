@@ -1,17 +1,251 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>Islah Web Service</title>
+@section('content')
+<!-- Hero Section -->
+<section class="conversion-hero py-20 lg:py-28" id="home">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-start">
+            <div class="conversion-hero-copy">
+                <div class="eyebrow text-blue-600 font-semibold text-sm mb-4">B2B Lead Generation • Local Leads • E-commerce SEO</div>
+                <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight mb-6">Get clean, verified B2B leads your sales team can actually use.</h1>
+                <p class="hero-lede text-lg text-gray-600 mb-8">We build targeted prospect lists for cold email, LinkedIn outreach, calling, appointment setting, and sales campaigns — without random companies, duplicates, or bounced emails.</p>
+                <div class="conversion-hero-actions flex flex-wrap gap-4 mb-8">
+                    <a class="btn btn-primary btn-large bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition inline-block" href="#free-sample">Get 20 Free Sample Leads</a>
+                    <a class="btn btn-secondary btn-large border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg font-semibold hover:border-blue-600 hover:text-blue-600 transition inline-block" href="#process">See the Process</a>
+                </div>
+                <div class="trust-strip flex flex-wrap gap-4 text-sm text-gray-500">
+                    <span class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Verified emails</span>
+                    <span class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>CRM-ready delivery</span>
+                    <span class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>US / UK / AU targeting</span>
+                </div>
+            </div>
+            
+            <!-- Lead Form -->
+            <div class="hero-offer-card bg-white rounded-2xl shadow-xl p-8 border border-gray-100" id="free-sample">
+                <div class="offer-badge bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full inline-block mb-4">Low-risk first step</div>
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Request a free sample</h2>
+                <p class="text-gray-600 mb-6">Tell us your target market and we'll review whether we can build a high-quality sample list for your campaign.</p>
+                <form class="lead-capture-form space-y-4">
+                    <div class="grid grid-cols-2 gap-4">
+                        <label class="block">
+                            <span class="text-sm font-medium text-gray-700">Name *</span>
+                            <input required name="name" value="" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 border p-3"/>
+                        </label>
+                        <label class="block">
+                            <span class="text-sm font-medium text-gray-700">Work email *</span>
+                            <input type="email" required name="email" value="" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 border p-3"/>
+                        </label>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <label class="block">
+                            <span class="text-sm font-medium text-gray-700">Company</span>
+                            <input name="company" value="" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 border p-3"/>
+                        </label>
+                        <label class="block">
+                            <span class="text-sm font-medium text-gray-700">Website</span>
+                            <input placeholder="https://" name="website" value="" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 border p-3"/>
+                        </label>
+                    </div>
+                    <label class="block">
+                        <span class="text-sm font-medium text-gray-700">What do you need? *</span>
+                        <select name="service" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 border p-3">
+                            <option value="B2B lead generation" selected>B2B lead generation</option>
+                            <option value="Google Maps local leads">Google Maps local leads</option>
+                            <option value="LinkedIn decision-maker research">LinkedIn decision-maker research</option>
+                            <option value="Email verification / enrichment">Email verification / enrichment</option>
+                            <option value="CRM data cleaning">CRM data cleaning</option>
+                            <option value="E-commerce SEO content">E-commerce SEO content</option>
+                            <option value="Product page SEO">Product page SEO</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </label>
+                    <label class="block">
+                        <span class="text-sm font-medium text-gray-700">Target market or keyword focus *</span>
+                        <textarea name="targetMarket" rows="4" required placeholder="Example: dental clinics in Canada, SaaS founders in the US, roofers in Texas..." class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 border p-3"></textarea>
+                    </label>
+                    <label class="block">
+                        <span class="text-sm font-medium text-gray-700">Notes</span>
+                        <textarea name="notes" rows="3" placeholder="Tell me about volume, CRM format, deadline, or current problem." class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 border p-3"></textarea>
+                    </label>
+                    <button class="btn btn-primary btn-submit w-full bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition" type="submit">Get 20 Free Sample Leads</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+<!-- Quick Answers Section -->
+<section class="conversion-section answer-section py-16 bg-gray-50" id="answers">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="section-header compact max-w-3xl mx-auto text-center mb-12">
+            <div class="eyebrow text-blue-600 font-semibold text-sm mb-4">Quick answers</div>
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Direct answers about Islah Web Service.</h2>
+            <p class="text-gray-600">These short answers help buyers, search engines, and AI answer engines understand exactly what the business does.</p>
+        </div>
+        <div class="answer-grid grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <article class="answer-card bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                <h3 class="font-bold text-gray-900 mb-3">What does Islah Web Service do?</h3>
+                <p class="text-gray-600 text-sm">Islah Web Service builds clean, verified B2B prospect lists for cold email, LinkedIn outreach, calling, appointment setting, and sales campaigns. The service also supports ecommerce brands with SEO keyword research, product copy, blog content, and publishing workflows.</p>
+            </article>
+            <article class="answer-card bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                <h3 class="font-bold text-gray-900 mb-3">Who is this service for?</h3>
+                <p class="text-gray-600 text-sm">The service is for B2B companies, agencies, appointment setters, sales teams, SaaS founders, local service providers, and ecommerce operators that need better data, cleaner outreach lists, or search-optimized content.</p>
+            </article>
+            <article class="answer-card bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                <h3 class="font-bold text-gray-900 mb-3">What makes the lead lists different?</h3>
+                <p class="text-gray-600 text-sm">Each list is targeted, AI-filtered, manually reviewed where needed, email-verified, deduplicated, enriched with useful details, and formatted for real outreach tools such as Google Sheets, CSV, HubSpot, Pipedrive, Instantly, Smartlead, and GoHighLevel.</p>
+            </article>
+            <article class="answer-card bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                <h3 class="font-bold text-gray-900 mb-3">How does the ecommerce SEO service work?</h3>
+                <p class="text-gray-600 text-sm">The content SEO workflow starts with Google and Ahrefs keyword research, then turns search intent into briefs, ChatGPT-assisted drafts, Surfer SEO humanization, product/blog formatting, image sourcing guidance, and publishing support.</p>
+            </article>
+        </div>
+    </div>
+</section>
 
-        <!-- Styles -->
-        <style>
+<!-- Services Section -->
+<section class="conversion-section solution-section py-16" id="services">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="section-header compact max-w-3xl mx-auto text-center mb-12">
+            <div class="eyebrow text-blue-600 font-semibold text-sm mb-4">Services</div>
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Two services built for growth teams.</h2>
+            <p class="text-gray-600">Lead generation gives your sales team better prospects. SEO content gives your website and store more search visibility.</p>
+        </div>
+        <div class="service-split-grid grid md:grid-cols-2 gap-8">
+            <div class="service-feature-card primary-card bg-white rounded-xl p-8 shadow-lg border-2 border-blue-100">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">B2B Lead Generation</h3>
+                <p class="text-gray-600 mb-6">Clean, targeted prospect lists for cold email, LinkedIn outreach, calling, appointment setting, and sales campaigns.</p>
+                <ul class="space-y-3 mb-6">
+                    <li class="flex items-start"><svg class="w-5 h-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-gray-700">Google Maps and local business research</span></li>
+                    <li class="flex items-start"><svg class="w-5 h-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-gray-700">LinkedIn and decision-maker research</span></li>
+                    <li class="flex items-start"><svg class="w-5 h-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-gray-700">Email verification and enrichment</span></li>
+                    <li class="flex items-start"><svg class="w-5 h-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-gray-700">Duplicate removal and CRM-ready formatting</span></li>
+                </ul>
+                <a class="text-link text-blue-600 font-semibold hover:text-blue-800 inline-flex items-center" href="#free-sample">Get sample leads →</a>
+            </div>
+            <div class="service-feature-card bg-white rounded-xl p-8 shadow-sm border border-gray-200">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">E-commerce Content SEO</h3>
+                <p class="text-gray-600 mb-6">Keyword research, SEO briefs, humanized content, product copy, and publishing support for e-commerce stores and blogs.</p>
+                <ul class="space-y-3 mb-6">
+                    <li class="flex items-start"><svg class="w-5 h-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-gray-700">Google + Ahrefs keyword research</span></li>
+                    <li class="flex items-start"><svg class="w-5 h-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-gray-700">ChatGPT-assisted SEO drafts</span></li>
+                    <li class="flex items-start"><svg class="w-5 h-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-gray-700">Surfer SEO AI Humanizer workflow</span></li>
+                    <li class="flex items-start"><svg class="w-5 h-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-gray-700">Shopify, WooCommerce, Amazon, and blog formatting</span></li>
+                </ul>
+                <a class="text-link text-blue-600 font-semibold hover:text-blue-800 inline-flex items-center" href="#seo-content">View SEO workflow →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Process Section -->
+<section class="conversion-section process-section py-16 bg-gray-50" id="process">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="section-header compact max-w-3xl mx-auto text-center mb-12">
+            <div class="eyebrow text-blue-600 font-semibold text-sm mb-4">Lead generation process</div>
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">From raw local data to verified outreach-ready leads.</h2>
+        </div>
+        <div class="process-grid grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="process-card bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                <div class="step-number text-4xl font-bold text-blue-100 mb-4">01</div>
+                <h3 class="font-bold text-gray-900 mb-3">Extract local/company data</h3>
+                <p class="text-gray-600 text-sm">We collect prospects from Google Maps and other relevant sources using structured workflows and Google Places data where useful.</p>
+            </div>
+            <div class="process-card bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                <div class="step-number text-4xl font-bold text-blue-100 mb-4">02</div>
+                <h3 class="font-bold text-gray-900 mb-3">Classify and filter with AI</h3>
+                <p class="text-gray-600 text-sm">We use AI-assisted filtering to detect industry, business type, services, fit, and relevance before cleaning the list.</p>
+            </div>
+            <div class="process-card bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                <div class="step-number text-4xl font-bold text-blue-100 mb-4">03</div>
+                <h3 class="font-bold text-gray-900 mb-3">Find contacts and enrich</h3>
+                <p class="text-gray-600 text-sm">We research team members, decision-makers, websites, LinkedIn profiles, company details, and useful outreach context.</p>
+            </div>
+            <div class="process-card bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                <div class="step-number text-4xl font-bold text-blue-100 mb-4">04</div>
+                <h3 class="font-bold text-gray-900 mb-3">Verify, clean, and deliver</h3>
+                <p class="text-gray-600 text-sm">Emails are verified, duplicates removed, formatting cleaned, and the final list is delivered in your preferred CRM-ready format.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pricing Section -->
+<section class="conversion-section pricing-section py-16" id="pricing">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="section-header compact max-w-3xl mx-auto text-center mb-12">
+            <div class="eyebrow text-blue-600 font-semibold text-sm mb-4">Pricing</div>
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Start with a sample, then quote by volume and complexity.</h2>
+            <p class="text-gray-600">Lead pricing depends on niche difficulty, contact depth, enrichment, verification, and delivery format.</p>
+        </div>
+        <div class="pricing-grid grid md:grid-cols-3 gap-8">
+            <div class="pricing-card bg-white rounded-xl p-8 shadow-lg border-2 border-blue-100 relative">
+                <div class="offer-badge bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full inline-block mb-4">Best first step</div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">Sample</h3>
+                <div class="price-text text-4xl font-bold text-blue-600 mb-4">Free</div>
+                <p class="text-gray-600 mb-6">20 sample leads from your target market</p>
+                <a class="btn btn-primary w-full bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition inline-block text-center" href="#free-sample">Start here</a>
+            </div>
+            <div class="pricing-card bg-white rounded-xl p-8 shadow-sm border border-gray-200">
+                <div class="offer-badge bg-gray-100 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full inline-block mb-4">For testing campaigns</div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">Starter List</h3>
+                <div class="price-text text-4xl font-bold text-gray-900 mb-4">Custom</div>
+                <p class="text-gray-600 mb-6">Small verified list for one niche or location</p>
+                <a class="btn btn-primary w-full bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition inline-block text-center" href="#free-sample">Start here</a>
+            </div>
+            <div class="pricing-card bg-white rounded-xl p-8 shadow-sm border border-gray-200">
+                <div class="offer-badge bg-gray-100 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full inline-block mb-4">For active outreach</div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">Growth List</h3>
+                <div class="price-text text-4xl font-bold text-gray-900 mb-4">Custom</div>
+                <p class="text-gray-600 mb-6">Larger enriched list with decision-makers and CRM formatting</p>
+                <a class="btn btn-primary w-full bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition inline-block text-center" href="#free-sample">Start here</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="conversion-section faq-section py-16 bg-gray-50" id="faq">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="section-header compact max-w-3xl mx-auto text-center mb-12">
+            <div class="eyebrow text-blue-600 font-semibold text-sm mb-4">FAQ</div>
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Questions buyers ask before ordering.</h2>
+        </div>
+        <div class="faq-grid grid md:grid-cols-2 gap-6">
+            <div class="faq-card bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                <h3 class="font-bold text-gray-900 mb-3">Can you target a very specific niche?</h3>
+                <p class="text-gray-600 text-sm">Yes. Share the location, business type, service, company size, target role, and any exclusions. We can build around local businesses, SaaS, healthcare, home services, professional services, and custom niches.</p>
+            </div>
+            <div class="faq-card bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                <h3 class="font-bold text-gray-900 mb-3">Do you only scrape Google Maps?</h3>
+                <p class="text-gray-600 text-sm">No. Google Maps is useful for local lead discovery, but the final list can also include website research, LinkedIn research, decision-maker lookup, enrichment, verification, and manual quality review.</p>
+            </div>
+            <div class="faq-card bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                <h3 class="font-bold text-gray-900 mb-3">What formats can you deliver?</h3>
+                <p class="text-gray-600 text-sm">Google Sheets, Excel, CSV, HubSpot, Pipedrive, GoHighLevel, Instantly, Smartlead, or your own CRM format.</p>
+            </div>
+            <div class="faq-card bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                <h3 class="font-bold text-gray-900 mb-3">Do you also write SEO content?</h3>
+                <p class="text-gray-600 text-sm">Yes. We handle keyword research, content briefs, product copy, blog drafts, Surfer-based humanization, formatting, and publishing support for e-commerce and blogs.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Final CTA Section -->
+<section class="conversion-section final-cta-section py-20" id="contact">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="final-cta-card bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-12 text-center text-white shadow-xl">
+            <h2 class="text-3xl lg:text-4xl font-bold mb-4">Stop wasting time on bad data.</h2>
+            <p class="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">Get clean, verified leads prepared for real outbound campaigns — or request help with e-commerce SEO content.</p>
+            <div class="conversion-hero-actions center-actions flex flex-wrap justify-center gap-4">
+                <a class="btn btn-primary btn-large bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition inline-block" href="#free-sample">Get 20 Free Sample Leads</a>
+                <a class="btn btn-secondary btn-large border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition inline-block" href="mailto:info@islahwebservice.com">Email Me</a>
+            </div>
+        </div>
+    </div>
+</section>
+@endsection
             /* ! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Figtree, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]{display:none}*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }.absolute{position:absolute}.relative{position:relative}.-left-20{left:-5rem}.top-0{top:0px}.-bottom-16{bottom:-4rem}.-left-16{left:-4rem}.-mx-3{margin-left:-0.75rem;margin-right:-0.75rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.flex{display:flex}.grid{display:grid}.hidden{display:none}.aspect-video{aspect-ratio:16 / 9}.size-12{width:3rem;height:3rem}.size-5{width:1.25rem;height:1.25rem}.size-6{width:1.5rem;height:1.5rem}.h-12{height:3rem}.h-40{height:10rem}.h-full{height:100%}.min-h-screen{min-height:100vh}.w-full{width:100%}.w-\[calc\(100\%\+8rem\)\]{width:calc(100% + 8rem)}.w-auto{width:auto}.max-w-\[877px\]{max-width:877px}.max-w-2xl{max-width:42rem}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.items-stretch{align-items:stretch}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.gap-2{gap:0.5rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.self-center{align-self:center}.overflow-hidden{overflow:hidden}.rounded-\[10px\]{border-radius:10px}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-md{border-radius:0.375rem}.rounded-sm{border-radius:0.125rem}.bg-\[\#FF2D20\]\/10{background-color:rgb(255 45 32 / 0.1)}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity))}.bg-gradient-to-b{background-image:linear-gradient(to bottom, var(--tw-gradient-stops))}.from-transparent{--tw-gradient-from:transparent var(--tw-gradient-from-position);--tw-gradient-to:rgb(0 0 0 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-white{--tw-gradient-to:rgb(255 255 255 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #fff var(--tw-gradient-via-position), var(--tw-gradient-to)}.to-white{--tw-gradient-to:#fff var(--tw-gradient-to-position)}.stroke-\[\#FF2D20\]{stroke:#FF2D20}.object-cover{object-fit:cover}.object-top{object-position:top}.p-6{padding:1.5rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-10{padding-top:2.5rem;padding-bottom:2.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.pt-3{padding-top:0.75rem}.text-center{text-align:center}.font-sans{font-family:Figtree, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-sm\/relaxed{font-size:0.875rem;line-height:1.625}.text-xl{font-size:1.25rem;line-height:1.75rem}.font-semibold{font-weight:600}.text-black{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.shadow-\[0px_14px_34px_0px_rgba\(0\2c 0\2c 0\2c 0\.08\)\]{--tw-shadow:0px 14px 34px 0px rgba(0,0,0,0.08);--tw-shadow-colored:0px 14px 34px 0px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.ring-1{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.ring-transparent{--tw-ring-color:transparent}.ring-white\/\[0\.05\]{--tw-ring-color:rgb(255 255 255 / 0.05)}.drop-shadow-\[0px_4px_34px_rgba\(0\2c 0\2c 0\2c 0\.06\)\]{--tw-drop-shadow:drop-shadow(0px 4px 34px rgba(0,0,0,0.06));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.drop-shadow-\[0px_4px_34px_rgba\(0\2c 0\2c 0\2c 0\.25\)\]{--tw-drop-shadow:drop-shadow(0px 4px 34px rgba(0,0,0,0.25));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.selection\:bg-\[\#FF2D20\] *::selection{--tw-bg-opacity:1;background-color:rgb(255 45 32 / var(--tw-bg-opacity))}.selection\:text-white *::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.selection\:bg-\[\#FF2D20\]::selection{--tw-bg-opacity:1;background-color:rgb(255 45 32 / var(--tw-bg-opacity))}.selection\:text-white::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.hover\:text-black:hover{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity))}.hover\:text-black\/70:hover{color:rgb(0 0 0 / 0.7)}.hover\:ring-black\/20:hover{--tw-ring-color:rgb(0 0 0 / 0.2)}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus-visible\:ring-1:focus-visible{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus-visible\:ring-\[\#FF2D20\]:focus-visible{--tw-ring-opacity:1;--tw-ring-color:rgb(255 45 32 / var(--tw-ring-opacity))}@media (min-width: 640px){.sm\:size-16{width:4rem;height:4rem}.sm\:size-6{width:1.5rem;height:1.5rem}.sm\:pt-5{padding-top:1.25rem}}@media (min-width: 768px){.md\:row-span-3{grid-row:span 3 / span 3}}@media (min-width: 1024px){.lg\:col-start-2{grid-column-start:2}.lg\:h-16{height:4rem}.lg\:max-w-7xl{max-width:80rem}.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.lg\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.lg\:flex-col{flex-direction:column}.lg\:items-end{align-items:flex-end}.lg\:justify-center{justify-content:center}.lg\:gap-8{gap:2rem}.lg\:p-10{padding:2.5rem}.lg\:pb-10{padding-bottom:2.5rem}.lg\:pt-0{padding-top:0px}.lg\:text-\[\#FF2D20\]{--tw-text-opacity:1;color:rgb(255 45 32 / var(--tw-text-opacity))}}@media (prefers-color-scheme: dark){.dark\:block{display:block}.dark\:hidden{display:none}.dark\:bg-black{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity))}.dark\:bg-zinc-900{--tw-bg-opacity:1;background-color:rgb(24 24 27 / var(--tw-bg-opacity))}.dark\:via-zinc-900{--tw-gradient-to:rgb(24 24 27 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #18181b var(--tw-gradient-via-position), var(--tw-gradient-to)}.dark\:to-zinc-900{--tw-gradient-to:#18181b var(--tw-gradient-to-position)}.dark\:text-white\/50{color:rgb(255 255 255 / 0.5)}.dark\:text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.dark\:text-white\/70{color:rgb(255 255 255 / 0.7)}.dark\:ring-zinc-800{--tw-ring-opacity:1;--tw-ring-color:rgb(39 39 42 / var(--tw-ring-opacity))}.dark\:hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.dark\:hover\:text-white\/70:hover{color:rgb(255 255 255 / 0.7)}.dark\:hover\:text-white\/80:hover{color:rgb(255 255 255 / 0.8)}.dark\:hover\:ring-zinc-700:hover{--tw-ring-opacity:1;--tw-ring-color:rgb(63 63 70 / var(--tw-ring-opacity))}.dark\:focus-visible\:ring-\[\#FF2D20\]:focus-visible{--tw-ring-opacity:1;--tw-ring-color:rgb(255 45 32 / var(--tw-ring-opacity))}.dark\:focus-visible\:ring-white:focus-visible{--tw-ring-opacity:1;--tw-ring-color:rgb(255 255 255 / var(--tw-ring-opacity))}}
         </style>
     </head>

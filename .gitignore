@@ -1,33 +1,32 @@
 ```
-# Laravel-specific ignores
-vendor/
-composer.lock
+# Dependencies
+node_modules/
+
+# Build artifacts
+dist/
+build/
+*.js.map
+*.css.map
+
+# Environment
 .env
 .env.local
 .env.*
-!.env.example
 
-# Build and cache directories
-bootstrap/cache/
-storage/framework/cache/
-storage/framework/sessions/
-storage/framework/views/
-public/storage/
+# Cache
+.vite/
+.vite-cache/
 
-# IDE and editor files
-.vscode/
-.idea/
-*.swp
-*.swo
+# Logs
+*.log
 
 # OS generated files
 .DS_Store
 Thumbs.db
 
-# Logs
-*.log
-storage/logs/
-
-# Compiled and temporary files
-*.tmp
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
 ```
