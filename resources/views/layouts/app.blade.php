@@ -17,7 +17,7 @@
 </head>
 <body class="bg-white text-gray-900 smooth-scroll">
     <!-- Navigation -->
-    <nav class="navbar fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-sm z-50">
+    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-sm z-50">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <a href="/" class="flex items-center space-x-3" aria-label="Islah Web Service home">
@@ -34,16 +34,16 @@
                 
                 <!-- Desktop Menu -->
                 <ul class="hidden md:flex items-center space-x-8">
-                    <li><a href="#services" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition">Services</a></li>
-                    <li><a href="#process" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition">Process</a></li>
-                    <li><a href="#proof" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition">Proof</a></li>
-                    <li><a href="#pricing" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition">Pricing</a></li>
-                    <li><a href="#faq" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition">FAQ</a></li>
-                    <li><a href="#free-sample" class="nav-link-cta bg-blue-600 text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-blue-700 transition">Free Sample</a></li>
+                    <li><a href="#services" class="text-gray-700 hover:text-blue-600 font-medium transition">Services</a></li>
+                    <li><a href="#process" class="text-gray-700 hover:text-blue-600 font-medium transition">Process</a></li>
+                    <li><a href="#proof" class="text-gray-700 hover:text-blue-600 font-medium transition">Proof</a></li>
+                    <li><a href="#pricing" class="text-gray-700 hover:text-blue-600 font-medium transition">Pricing</a></li>
+                    <li><a href="#faq" class="text-gray-700 hover:text-blue-600 font-medium transition">FAQ</a></li>
+                    <li><a href="#free-sample" class="bg-blue-600 text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-blue-700 transition">Free Sample</a></li>
                 </ul>
 
                 <!-- Mobile Menu Button -->
-                <button class="md:hidden hamburger p-2" aria-label="Toggle menu" aria-expanded="false">
+                <button id="mobile-menu-btn" class="md:hidden p-2" aria-label="Toggle menu" aria-expanded="false">
                     <span class="block w-6 h-0.5 bg-gray-700 mb-1.5"></span>
                     <span class="block w-6 h-0.5 bg-gray-700 mb-1.5"></span>
                     <span class="block w-6 h-0.5 bg-gray-700"></span>
@@ -52,7 +52,7 @@
         </div>
         
         <!-- Mobile Menu -->
-        <div class="mobile-menu hidden md:hidden bg-white border-t">
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
             <ul class="flex flex-col p-4 space-y-3">
                 <li><a href="#services" class="text-gray-700 hover:text-blue-600 font-medium">Services</a></li>
                 <li><a href="#process" class="text-gray-700 hover:text-blue-600 font-medium">Process</a></li>
@@ -69,10 +69,10 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer bg-gray-900 text-white py-12 mt-16">
+    <footer class="bg-gray-900 text-white py-12 mt-16">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-                <div class="footer-brand">
+                <div>
                     <h3 class="text-xl font-bold mb-3">Islah Web Service</h3>
                     <p class="text-gray-400 text-sm">Clean, verified B2B lead generation and ecommerce SEO content support for sales teams, agencies, and growth-focused businesses.</p>
                 </div>
@@ -97,7 +97,7 @@
                     <h4 class="font-semibold mb-3">Follow Us</h4>
                     <p class="text-gray-400 text-sm mb-3">Connect for lead generation insights.</p>
                     <div class="flex space-x-3">
-                        <a href="https://www.linkedin.com/company/islahwebservicebd" target="_blank" rel="noopener noreferrer" class="social-link bg-gray-800 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition">LinkedIn</a>
+                        <a href="https://www.linkedin.com/company/islahwebservicebd" target="_blank" rel="noopener noreferrer" class="bg-gray-800 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition">LinkedIn</a>
                     </div>
                 </div>
             </div>
@@ -114,8 +114,8 @@
 
     <script>
         // Mobile menu toggle
-        document.querySelector('.hamburger')?.addEventListener('click', function() {
-            const menu = document.querySelector('.mobile-menu');
+        document.getElementById('mobile-menu-btn')?.addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
         });
     </script>
