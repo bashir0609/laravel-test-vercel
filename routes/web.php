@@ -3,10 +3,14 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\LeadController;
 
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
+
+// Lead form submission
+Route::post('/sample-leads', [LeadController::class, 'submitSample'])->name('sample-leads.submit');
 
 // Guest routes (only for non-authenticated users)
 Route::middleware('guest')->group(function () {

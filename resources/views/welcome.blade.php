@@ -25,47 +25,65 @@
                 <div class="offer-badge bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full inline-block mb-4">Low-risk first step</div>
                 <h2 class="text-2xl font-bold text-gray-900 mb-4">Request a free sample</h2>
                 <p class="text-gray-600 mb-6">Tell us your target market and we'll review whether we can build a high-quality sample list for your campaign.</p>
-                <form class="lead-capture-form space-y-4">
+                
+                @if(session('success'))
+                    <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
+                        {{ session('success') }}
+                    </div>
+                @endif
+                
+                @if($errors->any())
+                    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+                        <ul class="list-disc list-inside">
+                            @foreach($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+                
+                <form class="lead-capture-form space-y-4" action="{{ route('sample-leads.submit') }}" method="POST">
+                    @csrf
                     <div class="grid grid-cols-2 gap-4">
                         <label class="block">
                             <span class="text-sm font-medium text-gray-700">Name *</span>
-                            <input required name="name" value="" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 border p-3"/>
+                            <input required name="name" value="{{ old('name') }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 border p-3"/>
                         </label>
                         <label class="block">
                             <span class="text-sm font-medium text-gray-700">Work email *</span>
-                            <input type="email" required name="email" value="" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 border p-3"/>
+                            <input type="email" required name="email" value="{{ old('email') }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 border p-3"/>
                         </label>
                     </div>
                     <div class="grid grid-cols-2 gap-4">
                         <label class="block">
                             <span class="text-sm font-medium text-gray-700">Company</span>
-                            <input name="company" value="" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 border p-3"/>
+                            <input name="company" value="{{ old('company') }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 border p-3"/>
                         </label>
                         <label class="block">
                             <span class="text-sm font-medium text-gray-700">Website</span>
-                            <input placeholder="https://" name="website" value="" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 border p-3"/>
+                            <input placeholder="https://" name="website" value="{{ old('website') }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 border p-3"/>
                         </label>
                     </div>
                     <label class="block">
                         <span class="text-sm font-medium text-gray-700">What do you need? *</span>
                         <select name="service" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 border p-3">
-                            <option value="B2B lead generation" selected>B2B lead generation</option>
-                            <option value="Google Maps local leads">Google Maps local leads</option>
-                            <option value="LinkedIn decision-maker research">LinkedIn decision-maker research</option>
-                            <option value="Email verification / enrichment">Email verification / enrichment</option>
-                            <option value="CRM data cleaning">CRM data cleaning</option>
-                            <option value="E-commerce SEO content">E-commerce SEO content</option>
-                            <option value="Product page SEO">Product page SEO</option>
-                            <option value="Other">Other</option>
+                            <option value="B2B lead generation" {{ old('service') == 'B2B lead generation' ? 'selected' : '' }}>B2B lead generation</option>
+                            <option value="Google Maps local leads" {{ old('service') == 'Google Maps local leads' ? 'selected' : '' }}>Google Maps local leads</option>
+                            <option value="LinkedIn decision-maker research" {{ old('service') == 'LinkedIn decision-maker research' ? 'selected' : '' }}>LinkedIn decision-maker research</option>
+                            <option value="Email verification / enrichment" {{ old('service') == 'Email verification / enrichment' ? 'selected' : '' }}>Email verification / enrichment</option>
+                            <option value="CRM data cleaning" {{ old('service') == 'CRM data cleaning' ? 'selected' : '' }}>CRM data cleaning</option>
+                            <option value="E-commerce SEO content" {{ old('service') == 'E-commerce SEO content' ? 'selected' : '' }}>E-commerce SEO content</option>
+                            <option value="Product page SEO" {{ old('service') == 'Product page SEO' ? 'selected' : '' }}>Product page SEO</option>
+                            <option value="Other" {{ old('service') == 'Other' ? 'selected' : '' }}>Other</option>
                         </select>
                     </label>
                     <label class="block">
                         <span class="text-sm font-medium text-gray-700">Target market or keyword focus *</span>
-                        <textarea name="targetMarket" rows="4" required placeholder="Example: dental clinics in Canada, SaaS founders in the US, roofers in Texas..." class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 border p-3"></textarea>
+                        <textarea name="targetMarket" rows="4" required placeholder="Example: dental clinics in Canada, SaaS founders in the US, roofers in Texas..." class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 border p-3">{{ old('targetMarket') }}</textarea>
                     </label>
                     <label class="block">
                         <span class="text-sm font-medium text-gray-700">Notes</span>
-                        <textarea name="notes" rows="3" placeholder="Tell me about volume, CRM format, deadline, or current problem." class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 border p-3"></textarea>
+                        <textarea name="notes" rows="3" placeholder="Tell me about volume, CRM format, deadline, or current problem." class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 border p-3">{{ old('notes') }}</textarea>
                     </label>
                     <button class="btn btn-primary btn-submit w-full bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition" type="submit">Get 20 Free Sample Leads</button>
                 </form>
