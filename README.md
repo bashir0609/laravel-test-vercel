@@ -1,5 +1,5 @@
 ---
-title: Laravel
+title: Islah Web Service
 description: A Laravel app that connects to a PostgreSQL database
 tags:
   - php
@@ -7,14 +7,14 @@ tags:
   - postgresql
 ---
 
-# Laravel Starter Example
+# Islah Web Service
 
-This is a [Laravel](https://laravel.com/) starter app that connects to a Railway Postgres database.
+This is a [Laravel](https://laravel.com/) application for Islah Web Service.
 
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/fWEWWf)
 
 ## ✨ Features
 
 - PHP
-- Laravel
+- Islah Web Service
 - Postgres
