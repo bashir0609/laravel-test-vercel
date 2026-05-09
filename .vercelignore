@@ -1,1 +1,9 @@
-/vendor
+node_modules
+.git
+.storage
+bootstrap/cache
+vendor
+tests
+.phpunit.cache
+npm-debug.log
+yarn-error.log

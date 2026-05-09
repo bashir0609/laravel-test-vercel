@@ -10,6 +10,13 @@ export default defineConfig({
     ],
     build: {
         outDir: 'public/build',
-        manifest: true,
+        manifest: 'manifest.json',
+        rollupOptions: {
+            output: {
+                assetFileNames: 'assets/[name]-[hash][extname]',
+                chunkFileNames: 'assets/[name]-[hash].js',
+                entryFileNames: 'assets/[name]-[hash].js',
+            },
+        },
     },
 });
